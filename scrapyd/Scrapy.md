@@ -16,9 +16,29 @@ url = http://localhost:6800/
 project = app
 ```
 
-执行部署
+启动服务
+```
+✗ scrapyd
+```
+
+部署项目
 ```
 ✗ scrapyd-deploy -p app
+```
+
+检查服务
+```
+✗ curl http://localhost:6800/daemonstatus.json
+```
+
+项目列表
+```
+✗ curl http://localhost:6800/listprojects.json
+```
+
+蜘蛛列表
+```
+✗ curl http://localhost:6800/listspiders.json?project=default
 ```
 
 调度任务
@@ -36,3 +56,9 @@ project = app
 ```
 curl http://localhost:6800/cancel.json -d project=default -d job=ip_cn_2016_12_29
 ```
+
+## 参考
+
+https://doc.scrapy.org/en/latest/
+
+http://scrapyd.readthedocs.io/en/latest

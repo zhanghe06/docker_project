@@ -42,7 +42,3 @@ docker run \
         scrapyd \
         bash
 ```
-
-## 部署应用
-```
-```
