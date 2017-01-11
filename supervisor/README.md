@@ -4,7 +4,7 @@ echo_supervisord_conf > etc/supervisord.conf
 ```
 
 ## 修改配置 etc/supervisord.conf
-设置 nodaemon=true 否则容器不能后台运行
+设置 nodaemon=true （非守护运行） 否则容器不能后台运行
 ```
 [supervisord]
 ...
@@ -24,6 +24,12 @@ supervisor 网络服务
 port=0.0.0.0:9001
 username=user
 password=123
+```
+
+可以关闭 unix_http_server
+```
+;[unix_http_server]
+;file=/tmp/supervisor.sock   ; (the path to the socket file)
 ```
 
 supervisor 控制台
