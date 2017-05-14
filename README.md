@@ -35,3 +35,30 @@ https://docs.docker.com
 3、docker 容器的 hosts 文件，在正在运行的容器 用docker exec 进入修改 /etc/hosts 文件，这个容器被重启后会发现 hosts文件会被还原。所以不要直接修改hosts文件，需要增加hosts，在docker run时 用 --add-host 参数。
 
 
+## 备注
+
+如果执行top时报错：
+```
+TERM environment variable not set.
+```
+解决方案：
+```
+$ echo "export TERM=dumb" >> ~/.bashrc
+$ source ~/.bashrc
+```
+
+docker run 指定 dns
+```
+docker run \
+            --name ${HOST_NAME}-${PORT}-${CONFIG_MODE_TEXT} \
+            -h ${HOST_NAME}-${PORT}-${CONFIG_MODE_TEXT} \
+            --dns=192.168.1.100 \
+            --dns=192.168.1.200 \
+            ...
+```
+进入容器查看生效情况：
+```
+# cat /etc/resolv.conf
+nameserver 192.168.1.100
+nameserver 192.168.1.200
+```

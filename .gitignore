@@ -3,3 +3,8 @@
 *.env
 *.idea
 *.pyc
+
+# 数据
+marriadb/data/*
+rabbitmq/data/*
+redis/data/*

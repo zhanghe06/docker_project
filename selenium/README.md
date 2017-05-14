@@ -13,3 +13,8 @@ docker run -d -p 4444:4444 --name selenium-chrome selenium/standalone-chrome
 ```
 
 http://0.0.0.0:4444/wd/hub/
+
+
+## todo
+
+是否支持并行多任务
