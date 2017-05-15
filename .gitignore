@@ -6,5 +6,6 @@
 
 # 数据
 marriadb/data/*
+mongodb/data/*
 rabbitmq/data/*
 redis/data/*
