@@ -9,3 +9,6 @@ marriadb/data/*
 mongodb/data/*
 rabbitmq/data/*
 redis/data/*
+
+# 日志
+nginx/log/*
