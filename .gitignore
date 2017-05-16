@@ -5,10 +5,13 @@
 *.pyc
 
 # 数据
+elasticsearch/data/*
 marriadb/data/*
 mongodb/data/*
+postgresql/data/*
 rabbitmq/data/*
 redis/data/*
 
 # 日志
 nginx/log/*
+elasticsearch/logs/*
