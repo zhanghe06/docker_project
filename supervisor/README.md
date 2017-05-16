@@ -68,7 +68,7 @@ docker build --rm=true -t supervisor .
 ```
 docker run \
         --name supervisor \
-        -v `pwd`/../code_project/supervisor_project:/supervisor_project \
+        -v ${PWD}/../code_project/supervisor_project:/supervisor_project \
         -d \
         -p 9001:9001 \
         supervisor \
@@ -87,7 +87,7 @@ docker exec -it supervisor bash
 docker run \
         --name supervisor \
         --rm=true \
-        -v `pwd`/../code_project/supervisor_project:/supervisor_project \
+        -v ${PWD}/../code_project/supervisor_project:/supervisor_project \
         -it \
         -p 9001:9001 \
         supervisor \

@@ -17,7 +17,7 @@ docker build --rm=true -t scrapyd .
 ```
 docker run \
         --name scrapyd \
-        -v `pwd`/../code_project/scrapy_project:/scrapy_project \
+        -v ${PWD}/../code_project/scrapy_project:/scrapy_project \
         -d \
         -p 6800:6800 \
         scrapyd \
@@ -36,7 +36,7 @@ docker exec -it scrapyd bash
 docker run \
         --name scrapyd \
         --rm=true \
-        -v `pwd`/../code_project/scrapy_project:/scrapy_project \
+        -v ${PWD}/../code_project/scrapy_project:/scrapy_project \
         -it \
         -p 6800:6800 \
         scrapyd \
