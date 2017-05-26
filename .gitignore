@@ -3,6 +3,7 @@
 *.env
 *.idea
 *.pyc
+*.DS_Store
 
 # 数据
 elasticsearch/data/*
@@ -16,3 +17,10 @@ redis/data/*
 # 日志
 nginx/log/*
 elasticsearch/logs/*
+
+# 插件
+elasticsearch/plugins/*
+
+# 配置
+elasticsearch/config/*
+!elasticsearch/config/elasticsearch.yml

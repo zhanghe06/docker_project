@@ -10,6 +10,8 @@ http://0.0.0.0:9200/_cluster/health
 
 ## plugin
 
+### elasticsearch-head 集群管理工具
+
 https://github.com/mobz/elasticsearch-head
 
 http://localhost:9100/
@@ -23,3 +25,7 @@ http.cors.allow-origin: "*"
 ```
 再次访问 http://localhost:9100/
 【集群健康值: green (0 of 0)】
+
+
+### elasticsearch-analysis-ik 中文分词
+https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v5.4.0/elasticsearch-analysis-ik-5.4.0.zip
