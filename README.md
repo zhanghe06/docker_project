@@ -62,3 +62,14 @@ docker run \
 nameserver 192.168.1.100
 nameserver 192.168.1.200
 ```
+
+
+python2 环境中文编码报错
+```
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-6: ordinal not in range(128)
+```
+优雅的解决方式：
+docker run 加入环境变量
+```
+-e PYTHONIOENCODING=utf-8
+```
