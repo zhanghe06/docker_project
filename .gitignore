@@ -8,7 +8,8 @@
 # 数据
 elasticsearch/data/*
 kibana/data/*
-marriadb/data/*
+mariadb/data/*
+mariadb/backup/*
 mongodb/data/*
 postgresql/data/*
 rabbitmq/data/*
