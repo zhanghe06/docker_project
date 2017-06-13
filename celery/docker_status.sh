@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 docker run \
-        --link some-rabbit:rabbit \
+        --link rabbitmq:rabbit \
         --rm \
         celery:4.0.2 \
         celery status
