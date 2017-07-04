@@ -1,31 +1,27 @@
-ElasticSearch
-https://hub.docker.com/_/elasticsearch/
+## elasticsearch
+
+https://github.com/elastic/elasticsearch
+
+https://github.com/elastic/elasticsearch-docker/tree/5.4
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker
+
+The default password for the elastic user is changeme
+username = elastic
+password = changeme
+
 ```
-$ sudo docker pull elasticsearch:5.4.0
+$ sudo docker pull docker.elastic.co/elasticsearch/elasticsearch:5.4.3
 ```
 
-https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html
 
-http://0.0.0.0:9200/_cluster/health
+## 生产环境注意事项
+[生产环境注意事项](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_notes_for_production_use_and_defaults)
 
-## plugin
 
-### elasticsearch-head 集群管理工具
-
-https://github.com/mobz/elasticsearch-head
-
-http://localhost:9100/
-
-当出现 【集群健康值: 未连接】 时
-elasticsearch/config/elasticsearch.yml
-新增以下配置，重启 elasticsearch 容器
+查看集群状态
 ```
-http.cors.enabled: true
-http.cors.allow-origin: "*"
+➜  elasticsearch git:(master) ✗ curl -u elastic http://127.0.0.1:9200/_cat/health
+Enter host password for user 'elastic':
+1499098552 16:15:52 es-cluster yellow 1 1 3 3 0 0 3 0 - 50.0%
 ```
-再次访问 http://localhost:9100/
-【集群健康值: green (0 of 0)】
-
-
-### elasticsearch-analysis-ik 中文分词
-https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v5.4.0/elasticsearch-analysis-ik-5.4.0.zip
