@@ -14,4 +14,4 @@ docker run \
     -e ELASTICSEARCH_URL=http://${ES_IP}:${ES_PORT} \
     -p 5601:5601 \
     -d \
-    kibana:5.4.0
+    docker.elastic.co/kibana/kibana:5.5.0
