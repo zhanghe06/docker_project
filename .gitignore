@@ -7,7 +7,9 @@
 
 # 数据
 elasticsearch/data/*
+elasticsearch_DEPRECATED/data/*
 kibana/data/*
+kibana_DEPRECATED/data/*
 mariadb/data/*
 mariadb/backup/*
 mongodb/data/*
