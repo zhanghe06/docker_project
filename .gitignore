@@ -16,6 +16,8 @@ mongodb/data/*
 postgresql/data/*
 rabbitmq/data/*
 redis/data/*
+etcd/data/*
+etcd_cluster/data/*
 
 # 日志
 nginx/log/*
