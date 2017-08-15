@@ -29,6 +29,32 @@ scaled_float 配合 scaling_factor
 }
 ```
 
+4. 同一个index下，不同doc_type同名字段不允许类型不同
+
+map 测试（报错）
+```
+PUT /map_test
+{
+    "mappings": {
+        "test_01": {
+            "properties": {
+                "id": {
+                    "type": "long"
+                }
+            }
+        },
+        "test_02": {
+            "properties": {
+                "id": {
+                    "type": "text"
+                }
+            }
+        }
+    }
+}
+```
+
+
 ```
 # 索引文档
 PUT /megacorp/employee/1
