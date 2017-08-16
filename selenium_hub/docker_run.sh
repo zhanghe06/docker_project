@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# 清理历史容器
+docker rm -f selenium-hub node-chrome node-firefox
+
+# 更新最新镜像
+docker pull selenium/hub
+docker pull selenium/node-chrome
+docker pull selenium/node-firefox
+
 # 启动hub
 docker run \
     -h selenium-hub \
