@@ -33,3 +33,7 @@ elasticsearch/config/*
 elasticsearch_DEPRECATED/config/*
 !elasticsearch/config/elasticsearch.yml
 !elasticsearch_DEPRECATED/config/elasticsearch.yml
+
+
+jenkins/jenkins_home/*
+jenkins/jenkins_home_blueocean/*
