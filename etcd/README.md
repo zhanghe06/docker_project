@@ -4,6 +4,9 @@ https://coreos.com/etcd/docs/latest/
 
 https://github.com/coreos/etcd/blob/master/Documentation/op-guide/container.md#docker
 
+https://github.com/coreos/etcd
+
+https://yeasy.gitbooks.io/docker_practice/content/etcd/
 
 测试容器
 ```
@@ -36,3 +39,12 @@ bar
 ✗ docker exec etcd /bin/sh -c "ETCDCTL_API=3 /usr/local/bin/etcdctl member list"
 90759d18ce3e162c, started, node1, http://192.168.4.1:2380, http://192.168.4.1:2379
 ```
+
+权限配置
+
+https://coreos.com/etcd/docs/latest/v2/authentication.html
+
+
+集群配置
+
+https://github.com/coreos/etcd/blob/master/Documentation/op-guide/clustering.md

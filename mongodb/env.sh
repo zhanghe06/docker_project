@@ -4,5 +4,5 @@ docker run \
     -it \
     --link mongo:mongo \
     --rm \
-    mongo:3.4.4 \
+    mongo:3.6 \
     env

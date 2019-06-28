@@ -6,6 +6,7 @@
 docker run \
     -h mariadb \
     --name mariadb \
+    -v ${PWD}/conf.d:/etc/mysql/conf.d \
     -v ${PWD}/data:/var/lib/mysql \
     -v ${PWD}/backup:/backup \
     -e MYSQL_ROOT_PASSWORD='123456' \

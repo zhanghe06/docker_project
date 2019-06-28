@@ -6,4 +6,4 @@ docker run \
         -v ${PWD}/data/db:/data/db \
         -p 27017:27017 \
         -d \
-        mongo:3.4.4
+        mongo:3.6

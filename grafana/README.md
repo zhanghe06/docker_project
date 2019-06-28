@@ -2,7 +2,7 @@ Grafana
 
 https://hub.docker.com/r/grafana/grafana/
 ```
-$ sudo docker pull grafana/grafana:4.3.2
+$ sudo docker pull grafana/grafana:5.0.4
 ```
 
 http://localhost:3000/

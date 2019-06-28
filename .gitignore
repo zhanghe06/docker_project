@@ -18,6 +18,7 @@ rabbitmq/data/*
 redis/data/*
 etcd/data/*
 etcd_cluster/data/*
+influxdb/data/*
 
 # 日志
 nginx/log/*
@@ -37,3 +38,6 @@ elasticsearch_DEPRECATED/config/*
 
 jenkins/jenkins_home/*
 jenkins/jenkins_home_blueocean/*
+
+confd/confd
+confd/etc/*

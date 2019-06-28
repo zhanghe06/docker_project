@@ -30,3 +30,8 @@ $ sh db_init.sh
 ```
 $ sh db_dump.sh
 ```
+
+容器内部mysql配置路径
+```
+/etc/mysql/my.cnf
+```
