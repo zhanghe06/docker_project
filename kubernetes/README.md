@@ -84,33 +84,23 @@ kubectl version
 kubectl api-resources
 ```
 
-常用获取操作
-```bash
-kubectl get deployments
-kubectl get endpoints
-kubectl get services
-kubectl get nodes
-kubectl get pods
-kubectl get configmaps
-kubectl get namespaces
-kubectl get daemonsets
-kubectl get ingresses
-kubectl get customresourcedefinitions
-```
-
-对应缩写
-```bash
-kubectl get deploy
-kubectl get ep
-kubectl get svc
-kubectl get no
-kubectl get po
-kubectl get cm
-kubectl get ns
-kubectl get ds
-kubectl get ing
-kubectl get crd
-```
+资源 | 简称
+--- | ---
+namespaces | ns
+nodes | no
+endpoints | ep
+ingresses | ing
+deployments | deploy
+services | svc
+pods | po
+replicaset | rs
+statefulset | sts
+daemonsets | ds
+customresourcedefinitions | crd
+configmaps | cm
+secrets | secret
+jobs | job
+cronjobs | cronjob
 
 指定命名空间（全部或单个）
 ```
@@ -205,7 +195,7 @@ Kubernetes 对象
 用户只需要挂载pvc到容器中而不需要关注存储卷采用何种技术实现
 
 pv和pvc是一对一绑定的。但是多个pod可以挂载同一个pvc
-通常使用的流程是，首先创建存储，在创建pv，接着创建pvc，pod挂载到相应的pvc
+通常使用的流程是，首先创建存储，再创建pv，接着创建pvc，pod挂载到相应的pvc
 ```
 
 
@@ -277,3 +267,57 @@ Ingress 控制器有各种类型，包括 Google Cloud Load Balancer， Nginx，
 
 
 https://kubernetes.github.io/ingress-nginx/deploy/#docker-for-mac
+
+### 集群内部访问外部服务
+
+k8s访问集群外独立的服务最好的方式是采用Endpoint方式，以mysql服务为例：
+
+创建mysql-service.yaml
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-production
+spec:
+  ports:
+    - port: 3306
+```
+
+创建mysql-endpoints.yaml
+```
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: mysql-production
+  namespace: default
+subsets:
+  - addresses:
+      - ip: 192.168.1.25
+    ports:
+      - port: 3306
+```
+
+就是将外部IP地址和服务引入到k8s集群内部，由service作为一个代理来达到能够访问外部服务的目的。
+
+### 排错
+
+1. 确认VIP是否被占用
+2. 禁用swap: `swapoff -a`
+3. 清理所有镜像: `docker rmi -f $(docker images -qa)` 或清理指定镜像 `docker rmi -f $(docker images | grep -E ":5000|acr.aishu.cn" | awk '{print $3}')`
+4. 设置开机启动`systemctl enable docker` 重启docker`systemctl restart docker`能解决大部分服务不可用的情况
+5. 手工清除全部pod `kubectl get pod -n anyshare | awk '{print $1}' | xargs kubectl delete pod -n anyshare`
+6. `kubectl get nodes` 如果master节点STATUS状态不为Ready，需要`systemctl start kubelet`
+7. k8s单node默认最大pod数量为110个，解决`too many pods`: `echo 'KUBELET_EXTRA_ARGS="--fail-swap-on=false --max-pods=300"' >> /etc/sysconfig/kubelet && systemctl restart kubelet`
+
+集群节点失效的处置
+```
+kubectl get nodes
+systemctl start kubelet  # 如果master节点STATUS状态不为Ready
+```
+
+如果启动失败
+```
+mkdir -p ~/.kube
+cp -i /etc/kubernetes/admin.conf ~/.kube/config
+chown $(id -u):$(id -g) ~/.kube/config
+```

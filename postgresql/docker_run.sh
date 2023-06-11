@@ -6,6 +6,6 @@ docker run \
     -v ${PWD}/data:/var/lib/postgresql/data \
     -e POSTGRES_USER='www' \
     -e POSTGRES_PASSWORD='123456' \
-    -e POSTGRES_DB='project' \
+    -e POSTGRES_DB='blink_box' \
     -p 5432:5432 \
     -d postgres:9.6.3

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+version=6.2
+
 [ -d ${PWD}/data ] || mkdir -p ${PWD}/data
 
 docker run \
@@ -8,5 +10,5 @@ docker run \
     -v ${PWD}/data:/data \
     -p 6379:6379 \
     -d \
-    redis:3.2.8 \
+    redis:${version} \
     redis-server

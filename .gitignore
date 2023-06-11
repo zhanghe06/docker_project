@@ -19,6 +19,7 @@ redis/data/*
 etcd/data/*
 etcd_cluster/data/*
 influxdb/data/*
+ClickHouse/data/*
 
 # 日志
 nginx/log/*
@@ -41,3 +42,10 @@ jenkins/jenkins_home_blueocean/*
 
 confd/confd
 confd/etc/*
+
+nsq/archive
+nsq/data
+
+rabbitmq_cluster/data_*/
+
+dameng/data/
