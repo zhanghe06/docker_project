@@ -14,4 +14,8 @@ docker run -d -p 5236:5236 --restart=always --name dm8_01 --privileged=true -e P
 1. 如果使用 docker 容器里面的 disql，进入容器后，先执行 source /etc/profile 防止中文乱码。
 2. 新版本 Docker 镜像中数据库默认用户名/密码为 SYSDBA/SYSDBA001。
 
-达梦数据库默认数据库管理员账号/密码：`SYSDBA`/`SYSDBA`（密码严格区分大小写）
+## DataGrip 连接达梦数据库
+
+[DataGrip 连接达梦数据库](https://eco.dameng.com/community/article/c572d68874e9e696ee72ff9ef6972209)
+
+[达梦数据驱动 DmJdbcDriver18](https://jar-download.com/artifact-search/DmJdbcDriver18)
