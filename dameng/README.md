@@ -19,3 +19,11 @@ docker run -d -p 5236:5236 --restart=always --name dm8_01 --privileged=true -e P
 [DataGrip 连接达梦数据库](https://eco.dameng.com/community/article/c572d68874e9e696ee72ff9ef6972209)
 
 [达梦数据驱动 DmJdbcDriver18](https://jar-download.com/artifact-search/DmJdbcDriver18)
+
+Goland 配置达梦数据驱动过程：
+```
+Database > + Driver
+User Drivers > Name: DM
+Driver Files > + Custom JARs...
+General Class: dm.jdbc.driver.DmDriver
+```

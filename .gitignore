@@ -24,17 +24,13 @@ ClickHouse/data/*
 # 日志
 nginx/log/*
 elasticsearch/logs/*
-elasticsearch_DEPRECATED/logs/*
 
 # 插件
 elasticsearch/plugins/*
-elasticsearch_DEPRECATED/plugins/*
 
 # 配置
 elasticsearch/config/*
-elasticsearch_DEPRECATED/config/*
 !elasticsearch/config/elasticsearch.yml
-!elasticsearch_DEPRECATED/config/elasticsearch.yml
 
 
 jenkins/jenkins_home/*
