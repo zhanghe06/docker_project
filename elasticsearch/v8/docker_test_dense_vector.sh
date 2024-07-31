@@ -27,7 +27,8 @@ curl -XGET http://localhost:9200/neural_index
 # 创建文档
 curl http://localhost:9200/neural_index/_bulk -XPOST -H 'Content-Type: application/json' -d '
 {"index": {"_id": "0"}}
-{"general_text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated.", "general_text_vector": [0.0367823, 0.072423555, ..., 0.0054274425], "color": "black"}'
+{"general_text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated.", "general_text_vector": [0.0367823, 0.072423555, ..., 0.0054274425], "color": "black"}
+'
 
 # 文档统计
 curl -XGET http://localhost:9200/_cat/indices

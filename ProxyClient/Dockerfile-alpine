@@ -1,0 +1,29 @@
+FROM python:3.10-alpine
+
+#apt-get install python-pip
+#pip install git+https://github.com/shadowsocks/shadowsocks.git@master
+WORKDIR /app
+
+#COPY . .
+
+COPY ./kcptun-linux-amd64-20230214.tar.gz ./kcptun-linux-amd64-20230214.tar.gz
+COPY ./shadowsocks-2.9.1.tar.gz ./shadowsocks-2.9.1.tar.gz
+COPY ./etc/kcptun.json /etc/kcptun.json
+COPY ./etc/shadowsocks.json /etc/shadowsocks.json
+COPY ./system/kcp-client.service /etc/systemd/system/kcp-client.service
+
+RUN set -eux && sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
+    apk add --no-cache -U build-base linux-headers py3-pip openrc privoxy && \
+    rm -rf /var/cache/apk/*
+
+RUN pip install shadowsocks-2.9.1.tar.gz
+
+RUN tar zxvf kcptun-linux-amd64-20230214.tar.gz
+
+RUN cp ./server_linux_amd64 /usr/bin/
+
+RUN systemctl daemon-reload && systemctl enable kcp-client && systemctl restart kcp-client
+
+EXPOSE 1080
+
+CMD ["sslocal", "-c", "/etc/shadowsocks.json"]

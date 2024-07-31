@@ -1,0 +1,10 @@
+[Unit]
+Description=Kcptun client
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/client_linux_amd64 -c /etc/kcptun.json
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

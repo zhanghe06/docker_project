@@ -45,3 +45,10 @@ nsq/data
 rabbitmq_cluster/data_*/
 
 dameng/data/
+
+mysql/master_slave/master/
+mysql/master_slave/slave/
+
+ProxyClient/etc/kcptun.json
+ProxyClient/etc/shadowsocks.json
+

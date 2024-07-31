@@ -46,3 +46,10 @@ docker run -e "ENROLLMENT_TOKEN=eyJ2ZXIiOiI4LjguMSIsImFkciI6WyIxNzIuMjcuMC4yOjky
 [https://github.com/mobz/elasticsearch-head](https://github.com/mobz/elasticsearch-head)
 
 8.x 版本禁用安全设置后，也是可以使用的
+
+## 集群健康
+
+单节点有时候会出现集群状态不健康，一般是副本没有分片导致，可以取消副本
+```
+curl 'http://localhost:9200/wechat_gzh_index/_settings' -X PUT -H "Content-Type: application/json" -d '{"number_of_replicas":"0"}'
+```
