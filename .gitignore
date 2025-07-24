@@ -51,4 +51,4 @@ mysql/master_slave/slave/
 
 ProxyClient/etc/kcptun.json
 ProxyClient/etc/shadowsocks.json
-#ProxyClient/python_2.7.18.tar.gz
+ProxyClient/python_2.7.18.tar.gz
