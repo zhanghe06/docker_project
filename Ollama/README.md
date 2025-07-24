@@ -67,7 +67,9 @@ docker run -d -p 3000:8080 \
     ghcr.io/open-webui/open-webui:main
 ```
 
-http://localhost:3000
+[用户页面](http://localhost:3000)
+
+[管理页面](http://localhost:3000/admin)
 
 macOS 环境
 

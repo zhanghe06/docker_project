@@ -60,6 +60,7 @@ docker run \
     -v $PWD/data/webdav:/data \
     chrislusf/seaweedfs:3.68 \
     webdav -filer="fs_filer:8888"
+
 # 一、挂载到MacOS
 # 1、Open "Finder" > "Go" > "Connect to Server"
 # 2、Enter the URL of the filer, Format: http://<filerHost>:<filerPort>

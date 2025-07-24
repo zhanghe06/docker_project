@@ -33,6 +33,6 @@ RUN pip install shadowsocks-2.9.1.tar.gz
 
 RUN tar zxvf kcptun-linux-amd64-20230214.tar.gz && mv client_linux_amd64 /usr/bin/
 
-EXPOSE 8118
+EXPOSE 8118 1080
 
 CMD ["sslocal", "-c", "/etc/shadowsocks.json"]

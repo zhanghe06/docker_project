@@ -48,3 +48,10 @@ apk add openrc --no-cache
 ```
 docker run --rm -it -v $PWD:/app python:3.10 bash
 ```
+
+
+## 远程拷贝
+
+```
+scp -r ./* root@47.83.149.160:~/proxy
+```

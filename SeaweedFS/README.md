@@ -34,3 +34,13 @@ curl -X DELETE http://localhost:8080/3,01b5620b52
 
 curl -i http://localhost:8080/3,01b5620b52
 ```
+
+## 身份验证
+
+生产应用中，需要在连接时提供用户名和密码。
+SeaweedFS 不直接处理这些凭据，但您可以使用 Nginx 或 Apache 等 Web 服务器作为反向代理，并在这些服务器上配置身份验证。
+
+
+## 接口
+
+- [Filer Server API](https://github.com/seaweedfs/seaweedfs/wiki/Filer-Server-API)
